@@ -17,8 +17,27 @@ This is assignment 2 of Data Structure.
 ## About board display
 include:
 * A 9x9 board, row(段) 1-9 from right to left, and column(筋) 1-9 from upward to downward
-* 20 chess for both user:
-** King 
+* 20 chess for both user: 步x9, 香x2, 桂x2, 銀x2, 金x2, 角x1, 飛x1, 玉x1
+* Mochigoma bag for each player
+```
+# Example
+--------- player y ---------
+　　　　　　　　　　　　　　　　　　　　
+============================
+9  8  7  6  5  4  3  2  1  
+香 桂 銀 金 玉 金 銀 桂 香 1
+　 飛 　 　 　 　 　 角 　 2
+步 步 步 步 步 步 步 步 步 3
+　 　 　 　 　 　 　 　 　 4
+　 　 　 　 　 　 　 　 　 5
+　 　 　 　 　 　 　 　 　 6
+步 步 步 步 步 步 步 步 步 7
+　 角 　 　 　 　 　 飛 　 8
+香 桂 銀 金 玉 金 銀 桂 香 9
+============================
+　　　　　　　　　　　　　　　　　　　　
+--------- player x ---------
+```
 
 ## Usage
 1. Print the initial board(Blue for playerx, and red for player y)
@@ -44,52 +63,52 @@ Player  x:
 8. If the movement include eating others chess, the chess will be place in eater's 'mochigoma bag'
 ```
 #Example
-Would you like to see the detailed process?[y/n]:y
-Input: 1.000000
-Input: 1.000000
-Output: 0
-MAE: 0.000000
-MSE: 0.000000
-...
+--------- player y ---------
+步 　　　　　　　　　　　　　　　　　　　
+============================
+9  8  7  6  5  4  3  2  1  
+香 桂 銀 金 玉 金 銀 桂 香 1
+　 飛 　 　 　 　 　 角 　 2
+　 步 步 步 步 步 　 步 步 3
+　 　 　 　 　 　 步 　 　 4
+步 　 　 　 　 　 　 　 　 5
+　 　 　 　 　 　 　 　 　 6
+　 步 步 步 步 步 步 步 步 7
+香 角 　 　 　 　 　 飛 　 8
+　 桂 銀 金 玉 金 銀 桂 香 9
+============================
+　　　　　　　　　　　　　　　　　　　　
+--------- player x ---------
 ```
 
-   (It usually takes some time)
+9. Each turn will be writen into a csv file named "game_record.csv"
 
-8. Write each training data into a csv file named "train.csv"
-9. Start Testing (Exit the test by entering 0):
-        
-   * Enter how much bits is your testing input: n
-
-   * Enter the n-bits-input
-```
-# Example
-Enter input's number of bits(Enter 0 to exit the test):4
-Enter the input:0011
-Output:0
-```  
 # Compile & Run
 
 ```sh
 # Compile
-cd xor_in_nn/
-gcc -o main.c -lm layer.c neuron.c
+$gcc -o shogi main.c board.c chess.c stack.c -lev
 
 # Run
-./a.out
+./shogi
 ```
 # Reference
-[Code reference](https://medium.com/analytics-vidhya/building-neural-network-framework-in-c-using-backpropagation-8ad589a0752d) 
+[Shogi rule](https://shogi.hk/Gameplay-of-Japanese-Chess-Shogi/)
 
-> Building-neural-network-framework-in-c-using-backpropagation
+> 將棋走法玩法
 
-[Concept of Neural Network](https://towardsdatascience.com/simple-neural-network-implementation-in-c-663f51447547)
+[Color output in C](https://www.796t.com/article.php?id=190246)
 
-> Simple neural network implementation in C
+> print color text in C
 
-[Concept of Neural Network](https://medium.com/datathings/neural-networks-and-backpropagation-explained-in-a-simple-way-f540a3611f5e)
+[Code reference of pgn](https://github.com/cutechess/sloppy/blob/master/src/pgn.c)
 
-> Neural networks and back-propagation explained in a simple way
+> A code of using pgn to save each games' chess noatation
 
-[Concept of Neural Network](https://towardsdatascience.com/activation-functions-neural-networks-1cbd9f8d91d6?gi=2041018f7b46)
+[Libev tutorial](https://gohalo.me/post/linux-libev.html)
 
-> Activation Functions in Neural Networks
+> Instruction of Libev and basic example code
+
+[Libev tutorial](https://github.com/redis/hiredis)
+
+> Instruction of Libev and basic example code
