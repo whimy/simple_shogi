@@ -85,10 +85,11 @@ Player  x:
 
 # Compile & Run
 
-```sh
+```
 # Compile
-$gcc -o shogi main.c board.c chess.c stack.c -lev
-
+gcc -o shogi main.c board.c chess.c stack.c -lev
+```
+```
 # Run
 ./shogi
 ```
