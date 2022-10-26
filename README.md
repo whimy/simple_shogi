@@ -60,7 +60,7 @@ Player  x:
   Error: 步 can only move forward one step.
   Please try again.
 ```
-8. If the movement include eating others chess, the chess will be place in eater's 'mochigoma bag'
+8. If the movement include eating others chess, the chess will be place in eater's "mochigoma bag"
 ```
 #Example
 --------- player y ---------
