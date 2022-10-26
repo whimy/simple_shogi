@@ -14,29 +14,34 @@ This is assignment 2 of Data Structure.
 > 
 > Which will be display by code block above
 
+## About board display
+include:
+* A 9x9 board, row(段) 1-9 from right to left, and column(筋) 1-9 from upward to downward
+* 20 chess for both user:
+** King 
+
 ## Usage
-1. Print the initial board
+1. Print the initial board(Blue for playerx, and red for player y)
 2. Display the turn number and which player's turn
-3. Enter the position of assigned chess in format:x y  //need to seperate wuth space
-4. Enter the position for the assigned chess to go in format:x y
+3. Start from player x, and take turns enter above data:
+4. Enter the position of assigned chess in format:x y  //need to seperate wuth space
+5. Enter the position for the assigned chess to go in format:x y
 ```
 # Example
 Turn 1
 Player  x:
-  Enter the initial position: 9 9   //need to seperate wuth space
+  Enter the initial position: 9 9   //need to seperate with space
   Enter the new position: 9 8
 ```
-6. Enter desired output for each training example
+6. The program will show user whether the movement is available
+7. If movement available, then program will execute.If not, it would ask user to enter again
 ```
-# Example
-Enter the Desired Outputs (Labels) for training example[0]:0
-Enter the Desired Outputs (Labels) for training example[1]:1
-Enter the Desired Outputs (Labels) for training example[2]:1
-Enter the Desired Outputs (Labels) for training example[3]:0
+# Example of Error message
+  You can not move to here.
+  Error: 步 can only move forward one step.
+  Please try again.
 ```
-7. Training the neural network 
-   
-   (You can decide whether to see the process by enter y or n)
+8. If the movement include eating others chess, the chess will be place in eater's 'mochigoma bag'
 ```
 #Example
 Would you like to see the detailed process?[y/n]:y
